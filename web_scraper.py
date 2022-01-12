@@ -20,6 +20,7 @@ class WebScraper:
     def __get_webdriver(self):
         options = Options()
         options.headless = True
+        options.add_argument("--log-level=3")
 
         s = Service(ChromeDriverManager().install())
         return webdriver.Chrome(service=s, options=options)
